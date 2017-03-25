@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="angularApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <!-- load bootstrap and fontawesome via CDN -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <style>
+        html, body
+        {
+            font-size: 1.1em;
+        }
+    </style>
+
+    <!-- load angular via CDN -->
+    <script src="//code.angularjs.org/1.3.0-rc.1/angular.min.js"></script>
+
+    <!-- Included angular messages services -->
+
+    <script src="//code.angularjs.org/1.3.0-rc.1/angular-messages.min.js"></script>
+
+
+    <script src="app-lab8.js"></script>
+
+
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Directives - An instruction to AngularJS to manipulate a piece of the DOM. This could be 'Add a Class', 'Hide this', 'Create this', etc. -->
+    <!-- ng-app, ng-controller are Directives-->
+
+
+    <div ng-controller="mainController">
+
+        <div>
+            <label>What is your twitter handle?</label>
+            <!-- This AngularJS Two way data binding -->
+            <!-- the 'handle' binds to this input text. and whatever user types will be updated in $scope.handle (JS - Model) as well as in {{handle}} (HTML - View) in view. that is why it is called as 2 way data binding -->
+            <!-- ng-model is one th Directives -->
+            <input type="text" ng-model="handle"/>
+
+            <hr/>
+
+            <h1>twitter.com/{{ handle}}</h1>
+            <hr/>
+
+            <h1>twitter.com/{{ lowercasehandle() }}</h1>
+
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
